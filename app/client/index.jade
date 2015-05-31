@@ -1,0 +1,17 @@
+doctype html
+html(lang="en" ng-app="taic" ng-strict-di)
+	head
+		title The Astro Imaging Channel
+		meta(charset="UTF-8")
+		base(href="/")
+		link(href="" rel="shortcut icon" type="image/x-icon")
+		// bower:css
+		// endbower
+		link(rel="stylesheet" href="app.css")
+	body(ng-cloak)
+		div.main-container
+			ui-view
+			footer
+		// bower:js
+		// endbower
+		script(src="taic.js")

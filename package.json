@@ -1,0 +1,37 @@
+{
+  "name": "TAIC-web",
+  "version": "0.1.0",
+  "description": "The Astro Imaging Channel Web Site",
+  "keywords": "astro, astronomy, astrophotography, live, tips, tricks, reviews",
+  "homepage": "http://theastroimagingchannel.com/code",
+  "author": "Jon Rista <jrista@hotmail.com> (http://jonrista.com)",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrista/TAIC"
+  },
+  "dependencies": {
+    "express": "^4.12.4",
+    "lodash": "^3.9.3",
+    "mongodb": "^2.0.33",
+    "monk": "^1.0.1"
+  },
+  "devDependencies": {
+    "del": "^1.2.0",
+    "gulp": "latest",
+    "gulp-angular-templatecache": "^1.6.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-jade": "^1.0.1",
+    "gulp-less": "^3.0.3",
+    "gulp-ng-annotate": "^1.0.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-webserver": "^0.9.1",
+    "less-plugin-autoprefix": "^1.4.1",
+    "main-bower-files": "^2.8.0",
+    "merge-stream": "^0.1.7",
+    "require-dir": "^0.3.0",
+    "wiredep": "^2.2.2"
+  }
+}
