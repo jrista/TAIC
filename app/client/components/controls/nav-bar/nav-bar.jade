@@ -1,0 +1,10 @@
+nav.navbar.navbar-inverse.taic-nav
+	ul.nav.navbar-nav
+		li(ng-repeat="rootItem in vm.menu" ng-class="{dropdown: rootItem.children && rootItem.children.length, active: vm.$state.includes(rootItem.route)}")
+			a(ui-sref="{{rootItem.route}}" ng-if="rootItem.routeType === 'sref'") {{ rootItem.name }}
+			a(ng-href="rootItem.route" ng-if="rootItem.routeType === 'href'") {{ rootItem.name }}
+			ul.dropdown-menu(role="menu" ng-if="rootItem.children && rootItem.children.length")
+				li(ng-repeat="childItem in rootItem.children")
+					a(ui-sref="{{childItem.route}}" ng-if="rootItem.routeType == 'sref'") {{ childItem.name }}
+					a(ng-href="childItem.route" ng-if="rootItem.routeType == 'href'") {{ childItem.name }}
+

@@ -4,14 +4,13 @@ html(lang="en" ng-app="taic" ng-strict-di)
 		title The Astro Imaging Channel
 		meta(charset="UTF-8")
 		base(href="/")
-		link(href="" rel="shortcut icon" type="image/x-icon")
 		// bower:css
 		// endbower
-		link(rel="stylesheet" href="app.css")
-	body(ng-cloak)
+		link(href="http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet" type="text/css")
+		link(href="taic.css" rel="stylesheet" type="text/css")
+	body(ng-controller="taicCtrl" ng-cloak)
 		div.main-container
 			ui-view
-			footer
 		// bower:js
 		// endbower
 		script(src="taic.js")

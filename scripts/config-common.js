@@ -14,7 +14,7 @@ var filesets = {
     jsMerge: ['app/client/**/*.js', '!app/client/*.js', '!app/client/**/*-spec.js'],
     jsMain: ['app/client/*.js', '!app/client/*-spec.js'],
     less: ['app/**/*.less'],
-    lessMain: 'app/clent/taic.less',
+    lessMain: 'app/client/taic.less',
 
     deployment: 'app/publicsite/**'
 };

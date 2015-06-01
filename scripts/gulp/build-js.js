@@ -2,6 +2,7 @@ var env = process.env.NODE_ENV || 'development';
 
 var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
+    print = require('gulp-print'),
     annotate = require('gulp-ng-annotate'),
     templates = require('gulp-angular-templatecache'),
     jade = require('gulp-jade'),
@@ -9,7 +10,7 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     //uglify = require('gulp-uglify'),
 
-    merge = require('merge-stream'),
+    merge = require('ordered-merge-stream'),
 
     config = require('../config-' + env + '.js');
 
@@ -34,7 +35,8 @@ gulp.task('build:js', [], function() {
         .src(config.common.filesets.jsMain);
 
     // Build the gulp action to concatenate all application scripts into a single script file
-    var action = merge(jsTmpls, jsMerge, jsMain)
+    var action = merge([jsTmpls, jsMerge, jsMain])
+        .pipe(print())
         .pipe(annotate())
         .pipe(sourcemaps.init())
         .pipe(concat('taic.js'))
