@@ -1,0 +1,15 @@
+div.content-slider
+	ol.slider-items
+		li.slider-item(ng-repeat="item in items | orderBy:item.order" ng-class="{ active: $index === current }")
+			a(ng-href="{{item.href}}" ng-if="!item.sref")
+				img(ng-src="{{item.img}}")
+				span {{item.title}}
+			a(ng-href="" ui-sref="{{item.sref}}" ng-if="item.sref")
+				img(ng-src="{{item.img}}")
+				span {{item.title}}
+	ol.indicators
+		li.indicator(ng-repeat="item in items | orderBy:item.order")
+			a.indicator-link(href="#" ng-click="setCurrent($index)")
+				i.fa(ng-class="{ 'fa-circle': $index === current, 'fa-circle-o': $index !== current  }")
+	a.navlink.prev(href="#" ng-click="prevItem()")
+	a.navlink.next(href="#" ng-click="nextItem()")

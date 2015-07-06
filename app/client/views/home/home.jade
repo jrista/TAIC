@@ -1,1 +1,6 @@
+pending-show(show="vm.pendingShow" ng-show="vm.isShowDay && !vm.isShowLive")
+live-show(feed-url="https://www.youtube.com/embed/4aDPdaExbWk" ng-show="vm.isShowDay && vm.isShowLive")
+content-slider.shows(items="vm.showSlider" ng-if="!vm.isShowDay")
+content-slider.iotw(items="vm.iotwSlider")
+
 h1 This is the home page!

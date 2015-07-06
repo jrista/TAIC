@@ -13,8 +13,9 @@ var filesets = {
     templateIndex: ['app/client/index.jade'],
     jsMerge: ['app/client/**/*.js', '!app/client/*.js', '!app/client/**/*-spec.js'],
     jsMain: ['app/client/*.js', '!app/client/*-spec.js'],
-    less: ['app/**/*.less'],
-    lessMain: 'app/client/taic.less',
+    less: ['app/client/**/*.less'],
+    lessMain: 'app/client/taic-main.less',
+    lessOverride: 'app/client/taic-override.less',
 
     deployment: 'app/publicsite/**'
 };

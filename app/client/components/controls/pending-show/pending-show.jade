@@ -1,0 +1,7 @@
+div.pending-show
+	img(ng-src="{{show.img}}")
+	div.content
+		h2.title {{show.title}}
+		h1.time(ng-if="!inCountdown") Show starts at: {{showTime}}
+		h1.timer(ng-if="inCountdown") Show starts {{timeTillShow}}
+		a(href="" ng-click="toggleAlarm()") {{alarmAction}} alarm

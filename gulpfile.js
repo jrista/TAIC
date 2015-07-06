@@ -13,9 +13,12 @@ requireDir('./scripts/gulp');
 //   given environment, type 'gulp <env>', such as 'gulp dev'.
 
 gulp.task('run', [env]);
-gulp.task('dev', ['run:development', 'watch']);
+gulp.task('dev', ['development:site', 'development:admin']);
+gulp.task('dev:site', ['development:site']);
+gulp.task('dev:admin', ['development:admin']);
 
-gulp.task('development', ['run:development', 'watch']);
+gulp.task('development:site', ['run:development', 'watch', 'admin:run:development', 'admin:watch']);
+gulp.task('development:admin', ['admin:run:development', 'admin:watch'])
 //gulp.task('production', ['run:production', 'watch']);
 
 // TODO: Add other environments?

@@ -32,3 +32,5 @@ bower_components
 
 # Angular site deployment target directory
 app/publicsite
+app/adminsite
+projectFilesBackup

@@ -36,7 +36,7 @@ gulp.task('build:js', [], function() {
 
     // Build the gulp action to concatenate all application scripts into a single script file
     var action = merge([jsTmpls, jsMerge, jsMain])
-        .pipe(print())
+        //.pipe(print())
         .pipe(annotate())
         .pipe(sourcemaps.init())
         .pipe(concat('taic.js'))
