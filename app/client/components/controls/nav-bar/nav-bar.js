@@ -30,9 +30,14 @@
 		}
 	}
 
-	function NavBarCtrl($state) {
+	function NavBarCtrl($state, $location) {
 		var vm = this;
 
+		vm.$location = $location;
 		vm.$state = $state;
+
+		vm.isCurrent = function(route) {
+			return vm.$state.includes(route) || vm.$location.path() === route;
+		}
 	}
 })();

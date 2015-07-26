@@ -5,6 +5,8 @@
 @screen-tablet: 690px;
 @screen-phone: 480px;
 
+@panel-bg: rgba(0,0,0,0.5);
+
 // --==[ Mixins ]==--
 .standard-shadow() {
 	box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
@@ -463,4 +465,17 @@ header {
 		width: 860px;
 		height: 483px;
 	}
+}
+
+
+
+
+
+.panel {
+	.standard-box();
+
+	background-color: #000;
+	background-color: @panel-bg;
+
+	padding: 15px;
 }

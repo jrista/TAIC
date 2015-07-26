@@ -26,8 +26,8 @@
 					routeType: "sref"
 				}, {
 					name: "About Us",
-					route: "taic.about",
-					routeType: "sref"
+					route: "/taic/pages/about",
+					routeType: "href"
 				}, {
 					name: "Contact",
 					route: "taic.contact",

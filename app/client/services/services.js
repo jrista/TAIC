@@ -7,6 +7,7 @@
 
 	angular
 		.module('taic.services', [
-			'taic.services.data'
+			'taic.services.data',
+			'taic.services.api'
 		]);
 })();

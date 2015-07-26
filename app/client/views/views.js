@@ -30,7 +30,9 @@
 
 		$urlRouterProvider
 			.when('', '/taic/home')
-			.when('/', '/taic/home');
+			.when('/', '/taic/home')
+			.when('/taic', '/taic/home')
+			.when('/taic/', '/taic/home');
 	}
 
 	/* ngInject */
