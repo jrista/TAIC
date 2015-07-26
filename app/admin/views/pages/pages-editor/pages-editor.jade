@@ -1,0 +1,15 @@
+div.pages-editor
+	div.panel
+		h3 Edit Page
+		form(ng-submit="vm.save(vm.page)")
+			p.path Public site path: {{vm.page.path}}
+			input.name(type="text" placeholder="Page Name" ng-model="vm.page.name" ng-change="vm.page.path = vm.formatPath(vm.page.name)" track-changes track-on="vm.tracker" track-property="name")
+			textarea.markdown(ng-model="vm.page.markdown" placeholder="Insert markdown here..." track-changes track-on="vm.tracker" track-property="markdown")
+
+			div.buttons
+				button.default(type="submit") Save
+				button.cancel(type="button" ng-click="vm.cancel()") Cancel
+
+	div.panel
+		h3 Page Preview
+		markdown(markdown-model="vm.page.markdown")

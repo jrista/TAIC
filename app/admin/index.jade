@@ -1,0 +1,19 @@
+doctype html
+html(lang="en" ng-app="taic.admin" ng-strict-di)
+	head
+		title The Astro Imaging Channel - Administrative Site
+		meta(charset="UTF-8")
+		base(href="/")
+		meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+		meta(name="HandheldFriendly" content="true")
+		// bower:css
+		// endbower
+		link(href="http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet" type="text/css")
+		link(href="admin/admin.css" rel="stylesheet" type="text/css")
+	body(ng-controller="taicAdminCtrl" ng-cloak)
+		div.main-container
+			ui-view
+		// bower:js
+		// endbower
+		script(src="admin/admin.js")

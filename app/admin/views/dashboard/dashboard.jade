@@ -1,0 +1,27 @@
+h2.area-title Dashboard
+
+div.admin-panel
+	div.dashboard-status
+		div.panel
+			h3 Site Status
+			span.info.note(ng-if="vm.settings.status.enabled")
+				i.fa.fa-check-circle
+				| The site is currently enabled and visible to users.
+			span.info.alert(ng-if="!vm.settings.status.enabled")
+				i.fa.fa-info-circle
+				| When site is disabled, a "Undergoing Maintenance" view will be displayed to visitors.
+		div.panel
+			h3 Live Session Status
+			h4.title Live Feed
+			span.info.note(ng-if="vm.settings.live.enabled")
+				i.fa.fa-youtube-play
+				span The current live session streaming feed will come from:
+					a(href="{{vm.settings.live.feedUrl}}") {{vm.settings.live.feedUrl}}
+
+			h4.title Schedule
+			span.info.note(ng-if="vm.settings.live.enabled")
+				i.fa.fa-clock-o
+				| The weekly live session is scheduled for {{vm.settings.live.schedule.dayOfWeek}} at {{vm.startTime | date:'shortTime'}}.
+			span.info.alert(ng-if="!vm.settings.live.enabled")
+				i.fa.fa-exclamation-triangle
+				| The weekly live session is currently disabled.

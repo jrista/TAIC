@@ -1,0 +1,57 @@
+h2.area-title Site Settings
+
+div.admin-panel
+	div.settings-editor
+		div.panel
+			h3 Live Session
+			form(ng-submit="vm.save(vm.settings)")
+				input.url(type="text" placeholder="YouTube Live Feed URL" ng-model="vm.settings.live.feedUrl" track-changes track-on="vm.tracker" track-property="settings.live.feedUrl")
+
+				h4.title Schedule
+
+				div.btn-group
+					label.btn.btn-toggle(ng-model="vm.settings.live.schedule.dayOfWeek" btn-radio="'Sun'" uncheckable track-changes track-on="vm.tracker" track-property="settings.live.schedule.dayOfWeek") Sun
+					label.btn.btn-toggle(ng-model="vm.settings.live.schedule.dayOfWeek" btn-radio="'Mon'" uncheckable track-changes track-on="vm.tracker" track-property="settings.live.schedule.dayOfWeek") Mon
+					label.btn.btn-toggle(ng-model="vm.settings.live.schedule.dayOfWeek" btn-radio="'Tue'" uncheckable track-changes track-on="vm.tracker" track-property="settings.live.schedule.dayOfWeek") Tue
+					label.btn.btn-toggle(ng-model="vm.settings.live.schedule.dayOfWeek" btn-radio="'Wed'" uncheckable track-changes track-on="vm.tracker" track-property="settings.live.schedule.dayOfWeek") Wed
+					label.btn.btn-toggle(ng-model="vm.settings.live.schedule.dayOfWeek" btn-radio="'Thu'" uncheckable track-changes track-on="vm.tracker" track-property="settings.live.schedule.dayOfWeek") Thu
+					label.btn.btn-toggle(ng-model="vm.settings.live.schedule.dayOfWeek" btn-radio="'Fri'" uncheckable track-changes track-on="vm.tracker" track-property="settings.live.schedule.dayOfWeek") Fri
+					label.btn.btn-toggle(ng-model="vm.settings.live.schedule.dayOfWeek" btn-radio="'Sat'" uncheckable track-changes track-on="vm.tracker" track-property="settings.live.schedule.dayOfWeek") Sat
+
+				div.schedule-time
+					timepicker.time-picker(ng-model="vm.startTime" hour-step="1" minute-step="5" track-changes track-on="vm.tracker" track-property="settings.live.schedule.timeOfDay")
+
+				div.show-enabled
+					div.check-box
+						input(type="checkbox" ng-model="vm.settings.live.enabled" ng-true-value="true" ng-false-value="false" id="showEnabled" checked)
+						label(for="showEnabled")
+					label(for="showEnabled") Enable Live Show
+
+				span.info(ng-if="vm.settings.live.enabled")
+					i.fa.fa-clock-o
+					| The weekly live session is scheduled for {{vm.settings.live.schedule.dayOfWeek}} at {{vm.startTime | date:'shortTime'}}.
+
+				span.info.alert(ng-if="!vm.settings.live.enabled")
+					i.fa.fa-exclamation-triangle
+					| The weekly live session is currently disabled.
+
+				div.buttons
+					button.default(type="submit") Save
+
+		div.panel
+			h3 Site Status
+			form(ng-submit="vm.save(vm.settings)")
+				div.on-off-switch
+					input(id="siteEnabled" type="checkbox" ng-model="vm.settings.status.enabled" ng-true-value="true" ng-false-value="false")
+					label(for="siteEnabled")
+
+				span.info(ng-if="vm.settings.status.enabled")
+					i.fa.fa-info-circle
+					| The site is currently enabled and visible to users.
+
+				span.info(ng-if="!vm.settings.status.enabled")
+					i.fa.fa-info-circle
+					| When site is disabled, a "Undergoing Maintenance" view will be displayed to visitors.
+
+				div.buttons
+					button.default(type="submit") Save

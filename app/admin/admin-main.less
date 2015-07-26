@@ -1,0 +1,457 @@
+@import "variables.less";
+
+// --==[ Overrides ]==--
+::-webkit-input-placeholder {
+	color: #444;
+}
+
+:-moz-placeholder {
+	/* Firefox 18- */
+	color: #444;
+}
+
+::-moz-placeholder {
+	/* Firefox 19+ */
+	color: #444;
+}
+
+:-ms-input-placeholder {
+	color: #444;
+}
+
+html {
+	font-size: 100%;
+	height: 100%;
+}
+
+@media screen and (max-width: @screen-medium) {
+	* {
+		font-size: 0.75rem;
+	}
+}
+
+body {
+	font-family: "Lato", Verdana, sans-serif;
+	font-size: 12pt;
+
+	background-color: @bg-dark;
+	color: @accent-primary;
+
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: @accent-primary;
+
+	transition: color @short-anim;
+
+	&:visited {
+		text-decoration: none;
+	}
+
+	&:hover, &:focus, &:active {
+		color: @accent-secondary;
+		text-decoration: none;
+	}
+
+	&:active {
+		color: @accent-primary-dk;
+		text-decoration: dashed;
+	}
+}
+
+// --==[ Common Classes ]==--
+
+a.button {
+	color: #444;
+	display: block;
+	float: right;
+	margin: 5px;
+	background-color: @bg-med;
+	border: solid 1px #444;
+	border-radius: 4px;
+	width: 37px;
+	height: 37px;
+
+	text-align: center;
+
+	&:hover, &:visited, &:focus {
+		color: #777;
+	}
+
+	&:active {
+		background-color: @bg-darker;
+		border-color: #333;
+	}
+
+	i.fa {
+		line-height: 37px;
+	}
+}
+
+// --==[ Main Container ]==--
+.main-container {
+	position: relative;
+	display: block;
+
+	margin: 0;
+	margin-top: 20px;
+	padding: 0;
+
+	height: 100%;
+
+	.sidebar {
+		position: fixed;
+		float: left;
+		width: 210px;
+		height: 100%;
+		margin-top: -20px;
+		padding-left: 10px;
+		background-color: @bg-accent;
+		border-right: solid 1px @accent-primary-dk;
+
+		.header {
+			position: relative;
+			margin: 0;
+			padding: 0;
+			height: 50px;
+
+			h2 {
+				display: block;
+			}
+		}
+	}
+
+	.content {
+		position: relative;
+		display: block;
+
+		margin-left: 240px;
+		color: #777;
+
+		hr {
+			margin-left: -20px;
+			color: #222;
+			background-color: #000;
+			height: 0;
+			border: solid 1px #333;
+		}
+
+		h2.area-title {
+			display: block;
+			color: #333;
+		}
+
+		.panel {
+			margin-right: 50px;
+			border: solid 1px #333;
+			border-top: solid 2px @accent-primary-dkdk;
+			border-radius: 0px;
+			padding: 20px;
+			margin-bottom: 25px;
+
+			overflow: hidden;
+
+			background-color: #101010;
+
+			h3 {
+				margin: 0;
+				margin-bottom: 20px;
+
+				color: #777;
+			}
+		}
+
+		.admin-panel {
+			overflow: hidden;
+
+			h4 {
+				margin-top: 1.5em;
+			}
+
+			.info {
+				display: block;
+				margin: 10px 0;
+				padding: 5px 8px;
+				border: dashed 1px @bg-accent-brt;
+				border-radius: 4px;
+				color: @text-dim;
+				line-height: 28px;
+
+				i.fa {
+					margin-right: 15px;
+				}
+
+				&.alert {
+					border-radius: 4px;
+					margin: 10px 0;
+					padding: 5px 8px;
+					border: solid 1px @accent-primary-dkdk;
+					background-color: @accent-primary-dkdk;
+					color: @accent-primary;
+				}
+
+				&.note {
+					border-radius: 4px;
+					margin: 10px 0;
+					padding: 5px 8px;
+					border: solid 1px @bg-med;
+					background-color: @bg-med;
+					color: @accent-tertiary;
+
+					i.fa {
+						color: @accent-secondary;
+					}
+				}
+			}
+
+			label.btn.btn-toggle {
+				background-color: @bg-med;
+				color: @accent-tertiary;
+				box-shadow: none;
+				border-radius: 0;
+
+				transition: background-color @short-anim, color @short-anim;
+
+				&:hover {
+					background-color: @bg-med-bt;
+					color: @accent-tertiary-bt;
+				}
+
+				&.active {
+					background-color: @accent-primary-dk;
+					color: @accent-primary;
+				}
+			}
+
+			table.time-picker {
+				margin: 10px 0px;
+				input {
+					border-radius: 0px;
+					border: none;
+					margin: 0;
+
+					&:focus {
+						outline: none;
+						box-shadow: none;
+					}
+				}
+
+				button {
+					width: 50px;
+					height: 34px;
+					padding: 0;
+					margin: 0;
+					margin-left: 10px;
+					border-radius: 0;
+					border: none;
+
+					&:active {
+						border: none;
+					}
+				}
+
+				.form-group {
+					padding: 1px;
+				}
+
+				.btn.btn-link {
+					color: @accent-primary-dk;
+					padding: 0px 12px;
+					border: none;
+				}
+			}
+
+			input, textarea {
+				border: none;
+				background-color: #222;
+				border-left: solid 4px @accent-primary-dk;
+				color: #777;
+				padding: 6px;
+				padding-left: 10px;
+				margin: 4px 0px;
+				font-size: 1.2em;
+
+				transition: background-color 400ms, border-color 400ms, color 400ms;
+
+				&:focus {
+					outline: none;
+					border-left: solid 4px @accent-primary;
+				}
+			}
+
+			input[type=checkbox] {
+			}
+
+			.on-off-switch {
+				width: 80px;
+				height: 26px;
+				background: #333;
+				position: relative;
+				border-radius: 50px;
+
+				&:after {
+					content: 'OFF';
+					color: #000;
+					position: absolute;
+					right: 10px;
+					padding-top: 1px;
+					z-index: 0;
+					font: 12px/26px Arial, sans-serif;
+					font-weight: bold;
+					text-shadow: 1px 1px 0px rgba(255, 255, 255, .15);
+				}
+				&:before {
+					content: 'ON';
+					color: @accent-primary;
+					position: absolute;
+					left: 10px;
+					padding-top: 1px;
+					z-index: 0;
+					font: 12px/26px Arial, sans-serif;
+					font-weight: bold;
+				}
+				label {
+					display: block;
+					width: 34px;
+					height: 20px;
+					margin: 0;
+					cursor: pointer;
+					position: absolute;
+					top: 3px;
+					left: 3px;
+					z-index: 1;
+					background: #555;
+					background: linear-gradient(to bottom, #777 0%, #555 40%, #333 100%);
+					border-radius: 50px;
+					transition: all 0.4s ease;
+					box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+				}
+				input[type=checkbox] {
+					visibility: hidden;
+					margin: 0;
+					&:checked + label {
+						left: 43px;
+					}
+				}
+			}
+
+			.check-box {
+				float: left;
+				margin-right: 10px;
+				width: 20px;
+				position: relative;
+				label {
+					width: 20px;
+					height: 20px;
+					cursor: pointer;
+					position: absolute;
+					top: 0;
+					left: 0;
+					background: #555;
+					background: linear-gradient(to bottom, #555 0%, #393939 40%, #202020 100%);
+					border-radius: 4px;
+					//box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+					&:after {
+						content: '';
+						width: 10px;
+						height: 6px;
+						position: absolute;
+						top: 6px;
+						left: 5px;
+						border: 3px solid @accent-primary;
+						border-top: none;
+						border-right: none;
+						background: transparent;
+						opacity: 0;
+						transform: rotate(-45deg);
+					}
+					&:hover::after {
+						transition: opacity 300ms;
+						opacity: 0.3;
+					}
+				}
+				input[type=checkbox] {
+					visibility: hidden;
+					&:checked + label:after {
+						transition: opacity 300ms;
+						opacity: 1;
+					}
+				}
+			}
+
+			textarea {
+				scrollbar-face-color: #333;
+				scrollbar-track-color: #444;
+				scrollbar-arrow-color: #777;
+				scrollbar-highlight-color: #777;
+				scrollbar-shadow-color: #222;
+				scrollbar-3dlight-color: #444;
+				scrollbar-darkshadow-color: #222;
+			}
+
+			button {
+				display: block;
+				color: #555;
+				background-color: @bg-med;
+				border: none;
+				border-left: solid 4px @accent-tertiary;
+				border-right: solid 4px @bg-med;
+				padding: 15px 25px;
+				margin: 10px 0px;
+
+				transition: background-color @short-anim, border-color @short-anim, color @short-anim;
+
+				&:hover {
+					background-color: @accent-primary-dk;
+					border-right: solid 4px @accent-primary-dk;
+					color: @accent-primary;
+				}
+
+				&:active, &:active:focus {
+					background-color: @bg-med-bt;
+					border-left: solid 4px @bg-med-bt;
+					border-right: solid 4px @bg-med-bt;
+					color: #777;
+				}
+
+				&:focus {
+					outline: none;
+					background-color: @accent-primary-dk;
+					border-right: solid 4px @accent-primary-dk;
+					color: @accent-primary;
+				}
+
+				&.default {
+					float: left;
+					border-left: solid 4px @accent-primary-dk;
+				}
+
+				&.cancel {
+					float: right;
+
+					&:hover {
+						background-color: @accent-tertiary;
+						border-right: solid 4px @accent-tertiary;
+						color: @accent-tertiary-bt;
+					}
+
+					&:active, &:active:focus {
+						background-color: @bg-med-bt;
+						border-left: solid 4px @bg-med-bt;
+						border-right: solid 4px @bg-med-bt;
+						color: #777;
+					}
+
+					&:focus {
+						outline: none;
+						background-color: @accent-tertiary;
+						border-right: solid 4px @accent-tertiary;
+						color: @accent-tertiary-bt;
+					}
+				}
+			}
+		}
+	}
+}

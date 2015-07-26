@@ -1,0 +1,18 @@
+div.pages-listing
+	div.panel
+		div.tools
+			a.button(ui-sref="admin.pages.editor" tooltip="New Page")
+				i.fa.fa-plus
+		table.table
+			thead
+				tr
+					th Name
+					th Path
+					th Date
+			tbody
+				tr(ng-repeat="page in vm.pages")
+					td
+						a(ui-sref="admin.pages.editor({name:page.name})") {{page.name}}
+					td
+						a(href="{{page.path}}" target="_blank") {{page.path}}
+					td {{page.date}}

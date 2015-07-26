@@ -1,0 +1,24 @@
+div.sidebar
+	div.header
+		h2 Admin
+	div.menu
+		ul
+			li
+				a(ui-sref="admin.dashboard" ng-class="{ active: vm.isState('admin.dashboard') }")
+					i.fa.fa-home
+					| Dashboard
+			li
+				a(ui-sref="admin.pages.listing" ng-class="{ active: vm.isState('admin.pages') }")
+					i.fa.fa-file-text-o
+					| Pages
+			li
+				a(ui-sref="admin.iotw" ng-class="{ active: vm.isState('admin.iotw') }")
+					i.fa.fa-picture-o
+					| Image of the Week
+			li
+				a(ui-sref="admin.settings" ng-class="{ active: vm.isState('admin.settings') }")
+					i.fa.fa-gears
+					| Settings
+div.content
+	ui-view
+
