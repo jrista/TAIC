@@ -26,10 +26,10 @@ gulp.task('build:less', function() {
     var action = merge([main, lessOverrides, mainOverrides])
 				//.pipe(print())
         .pipe(plumber())
+        .pipe(concat('taic.less'))
         .pipe(less({
             plugins: [ autoprefix ]
         }))
-        .pipe(concat('taic.css'))
         //.pipe(minify())
         .pipe(gulp.dest(config.common.paths.wwwroot));
 

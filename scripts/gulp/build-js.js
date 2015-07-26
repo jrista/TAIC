@@ -2,7 +2,7 @@ var env = process.env.NODE_ENV || 'development';
 
 var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
-    print = require('gulp-print'),
+    //print = require('gulp-print'),
     annotate = require('gulp-ng-annotate'),
     templates = require('gulp-angular-templatecache'),
     jade = require('gulp-jade'),
@@ -36,7 +36,6 @@ gulp.task('build:js', [], function() {
 
     // Build the gulp action to concatenate all application scripts into a single script file
     var action = merge([jsTmpls, jsMerge, jsMain])
-        //.pipe(print())
         .pipe(annotate())
         .pipe(sourcemaps.init())
         .pipe(concat('taic.js'))
